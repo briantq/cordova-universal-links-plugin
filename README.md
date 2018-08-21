@@ -1,4 +1,7 @@
 # Cordova Universal Links Plugin
+
+THIS WAS FORKED FROM [nordnet/cordova-universal-links-plugin](nordnet/cordova-universal-links-plugin) as that repo seemed to be abandoned and I needed to make some changes.  The repo was forked on August 21, 2018.  The purpose of this repo is to include fixes for Cordova 8 where this plugin won't install because the Android Manifest has changed location.  In order to get around this, I forked and am adding the fix.
+
 This Cordova plugin adds support for opening an application from the browser when user clicks on the link. Better known as:
 - [Universal Links on iOS](https://developer.apple.com/library/ios/documentation/General/Conceptual/AppSearch/UniversalLinks.html)
 - [Deep Linking on Android](https://developer.android.com/training/app-indexing/deep-linking.html)
