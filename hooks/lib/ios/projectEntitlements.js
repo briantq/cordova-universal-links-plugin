@@ -34,6 +34,7 @@ function generateEntitlements(cordovaContext, pluginPreferences) {
 
   var currentEntitlements = getEntitlementsFileContent();
   var newEntitlements = injectPreferences(currentEntitlements, pluginPreferences);
+  console.log('BRIAN - ENTITLEMENTS ', currentEntitlements, newEntitlements);
 
   saveContentToEntitlementsFile(newEntitlements);
 }
@@ -51,6 +52,8 @@ function saveContentToEntitlementsFile(content) {
   var plistContent = plist.build(content);
   var filePath = pathToEntitlementsFile();
 
+  console.log('BRIAN - SAVING PATH TO ENTITLEMENTS: ' + filePath)
+
   // ensure that file exists
   mkpath.sync(path.dirname(filePath));
 
@@ -65,6 +68,7 @@ function saveContentToEntitlementsFile(content) {
  */
 function getEntitlementsFileContent() {
   var pathToFile = pathToEntitlementsFile();
+  console.log('BRIAN - READING TO ENTITLEMENTS: ' + filePath)
   var content;
 
   try {
@@ -142,7 +146,7 @@ function domainsListEntryForHost(host) {
  */
 function pathToEntitlementsFile() {
   if (entitlementsFilePath === undefined) {
-    entitlementsFilePath = path.join(getProjectRoot(), 'platforms', 'ios', getProjectName(), 'Resources', getProjectName() + '.entitlements');
+    entitlementsFilePath = path.join(getProjectRoot(), 'platforms', 'ios', getProjectName(), 'Entitlements-Debug.plist');
   }
 
   return entitlementsFilePath;

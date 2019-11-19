@@ -24,6 +24,7 @@ module.exports = function(ctx) {
  * @param {Object} cordovaContext - cordova context object
  */
 function run(cordovaContext) {
+  console.log('BRIAN: running after prepare');
   var pluginPreferences = configParser.readPreferences(cordovaContext);
   var platformsList = cordovaContext.opts.platforms;
 
@@ -38,6 +39,7 @@ function run(cordovaContext) {
     return;
   }
 
+  console.log('BRIAN: Platform list', platformsList);
   platformsList.forEach(function(platform) {
     switch (platform) {
       case ANDROID:
